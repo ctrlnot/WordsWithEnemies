@@ -1,2 +1,2 @@
 # WordsWithEnemies
-A word game.
+A simple word game made with GameMaker:Studio.
