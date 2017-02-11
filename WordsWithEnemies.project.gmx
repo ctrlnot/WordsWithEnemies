@@ -453,11 +453,14 @@
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_play</sprite>
+    <sprite>sprites\spr_options</sprite>
+    <sprite>sprites\spr_quit</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_menu.gml</script>
+    <script>scripts\scr_menu_title.gml</script>
     <script>scripts\scr_gamemode.gml</script>
     <script>scripts\scr_letterObj.gml</script>
     <script>scripts\scr_motion.gml</script>
@@ -469,20 +472,27 @@
       <script>scripts\scr_value.gml</script>
       <script>scripts\scr_calculate.gml</script>
     </scripts>
+    <script>scripts\scr_options.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_menu</object>
-    <object>objects\obj_gamemode</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_options</object>
     <objects name="gameplay">
       <object>objects\obj_input</object>
       <object>objects\obj_state</object>
     </objects>
+    <objects name="menu-title">
+      <object>objects\obj_play</object>
+      <object>objects\obj_options</object>
+      <object>objects\obj_quit</object>
+      <object>objects\obj_title_select</object>
+      <object>objects\parent_menus</object>
+    </objects>
+    <object>objects\obj_enemy</object>
+    <object>objects\obj_gamemode</object>
+    <object>objects\obj_optionXX</object>
+    <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

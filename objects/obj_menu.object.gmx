@@ -93,14 +93,16 @@ if(push) scr_menu();
             <string>draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_set_font(f_reg);
-draw_set_color(c_black);
+//draw_set_color(c_black);
 
 for (var m = 0; m &lt; array_length_1d(menu); m++) {
     
     draw_text(x + padding, y + (m * padding), string(menu[m]));
         
-    //if(menu[m] == mpos) draw_set_color(c_red);
-    //else draw_set_color(c_black);
+    if(m == mpos - 1) draw_set_color(c_white);
+    else draw_set_color(c_black);
+    
+    
 }
 
 
