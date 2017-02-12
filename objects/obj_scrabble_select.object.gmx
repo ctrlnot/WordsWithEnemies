@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menuSize = 3;
-selected = 0;
+            <string>menuSize = 2;
+selectedValue = 0;
+selected = global.scrabble;
+isParentSelected = false;
 </string>
           </argument>
         </arguments>
@@ -49,12 +51,15 @@ selected = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Hover menu
-var move = 0;
-move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
-move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
+            <string>// Check Parent if Selected
+if(obj_scrabble.selected) isParentSelected = true; else isParentSelected = false;
 
-if(move != 0) {
+// Hover menu
+var move = 0;
+move -= max(keyboard_check_pressed(vk_left), keyboard_check_pressed(ord("A")), 0);
+move += max(keyboard_check_pressed(vk_right), keyboard_check_pressed(ord("D")), 0);
+
+if(move != 0 &amp;&amp; isParentSelected) {
     selected += move;
     if(selected &lt; 0) selected = menuSize - 1;
     if(selected &gt; menuSize - 1) selected = 0;
@@ -62,17 +67,16 @@ if(move != 0) {
 
 // Trigger effects
 switch(selected) {
-    case 0: obj_play.selected = 1; obj_options.selected = 0; obj_quit.selected = 0; break;
-    case 1: obj_play.selected = 0; obj_options.selected = 1; obj_quit.selected = 0; break;
-    case 2: obj_play.selected = 0; obj_options.selected = 0; obj_quit.selected = 1; break;
+    case 0: obj_scrabble_on.selected = 0; obj_scrabble_off.selected = 1; break;
+    
+    case 1: obj_scrabble_on.selected = 1; obj_scrabble_off.selected = 0; break;
+    
+    default: obj_scrabble_on.selected = 0; obj_scrabble_off.selected = 1; break;
 }
 
-// Select menu
-var push;
-push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space), 0);
-
-if(push) scr_menu_title();
-
+// Pass the value to parent
+if(obj_scrabble_on.selected) selectedValue = obj_scrabble_on.value;
+if(obj_scrabble_off.selected) selectedValue = obj_scrabble_off.value;
 </string>
           </argument>
         </arguments>

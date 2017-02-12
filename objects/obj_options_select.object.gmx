@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menuSize = 3;
+            <string>menuSize = 7;
 selected = 0;
 </string>
           </argument>
@@ -62,16 +62,40 @@ if(move != 0) {
 
 // Trigger effects
 switch(selected) {
-    case 0: obj_play.selected = 1; obj_options.selected = 0; obj_quit.selected = 0; break;
-    case 1: obj_play.selected = 0; obj_options.selected = 1; obj_quit.selected = 0; break;
-    case 2: obj_play.selected = 0; obj_options.selected = 0; obj_quit.selected = 1; break;
+    case 0: obj_diff.selected = 1; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
+    case 1: obj_diff.selected = 0; obj_scrabble.selected = 1; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
+    case 2: obj_diff.selected = 0; obj_scrabble.selected = 0; obj_combo.selected = 1; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
+    case 3: obj_diff.selected = 0; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 1;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
+    case 4: obj_diff.selected = 0; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 1; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
+    case 5: obj_diff.selected = 0; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 1; obj_op_back.selected = 0;
+    break;
+    case 6: obj_diff.selected = 0; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 1;
+    break;
+    default: obj_diff.selected = 1; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
+            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+    break;
 }
+
+// Store choices
+
 
 // Select menu
 var push;
-push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space), 0);
+push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space), keyboard_check_released(vk_escape), 0);
 
-if(push) scr_menu_title();
+if(push) scr_menu_save();
 
 </string>
           </argument>

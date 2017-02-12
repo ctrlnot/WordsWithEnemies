@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menuSize = 3;
+            <string>image_speed = 0;
 selected = 0;
 </string>
           </argument>
@@ -49,30 +49,7 @@ selected = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Hover menu
-var move = 0;
-move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
-move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
-
-if(move != 0) {
-    selected += move;
-    if(selected &lt; 0) selected = menuSize - 1;
-    if(selected &gt; menuSize - 1) selected = 0;
-}
-
-// Trigger effects
-switch(selected) {
-    case 0: obj_play.selected = 1; obj_options.selected = 0; obj_quit.selected = 0; break;
-    case 1: obj_play.selected = 0; obj_options.selected = 1; obj_quit.selected = 0; break;
-    case 2: obj_play.selected = 0; obj_options.selected = 0; obj_quit.selected = 1; break;
-}
-
-// Select menu
-var push;
-push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space), 0);
-
-if(push) scr_menu_title();
-
+            <string>if(selected) image_index = 1; else image_index = 0;
 </string>
           </argument>
         </arguments>

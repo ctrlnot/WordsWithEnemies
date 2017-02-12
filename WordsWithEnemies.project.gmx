@@ -453,9 +453,31 @@
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_play</sprite>
-    <sprite>sprites\spr_options</sprite>
-    <sprite>sprites\spr_quit</sprite>
+    <sprites name="menu-title">
+      <sprite>sprites\spr_quit</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_play</sprite>
+    </sprites>
+    <sprites name="menu-options">
+      <sprite>sprites\spr_diff</sprite>
+      <sprite>sprites\spr_scrabble</sprite>
+      <sprite>sprites\spr_combo</sprite>
+      <sprite>sprites\spr_hp</sprite>
+      <sprite>sprites\spr_rounds</sprite>
+      <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_op_back</sprite>
+      <sprite>sprites\spr_easy</sprite>
+      <sprite>sprites\spr_ave</sprite>
+      <sprite>sprites\spr_hard</sprite>
+      <sprite>sprites\spr_on</sprite>
+      <sprite>sprites\spr_off</sprite>
+      <sprite>sprites\spr_num_100</sprite>
+      <sprite>sprites\spr_num_200</sprite>
+      <sprite>sprites\spr_num_300</sprite>
+      <sprite>sprites\spr_num_5</sprite>
+      <sprite>sprites\spr_num_10</sprite>
+      <sprite>sprites\spr_num_15</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -472,26 +494,67 @@
       <script>scripts\scr_value.gml</script>
       <script>scripts\scr_calculate.gml</script>
     </scripts>
-    <script>scripts\scr_options.gml</script>
+    <script>scripts\scr_menu_save.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
+    <object>objects\par_menus</object>
     <objects name="gameplay">
       <object>objects\obj_input</object>
       <object>objects\obj_state</object>
     </objects>
+    <objects name="menu-options">
+      <objects name="par-options">
+        <object>objects\par_choice_step</object>
+        <object>objects\par_choice_on</object>
+        <object>objects\par_choice_off</object>
+        <object>objects\par_choice_100</object>
+        <object>objects\par_choice_200</object>
+        <object>objects\par_choice_300</object>
+      </objects>
+      <objects name="choices">
+        <object>objects\obj_easy</object>
+        <object>objects\obj_ave</object>
+        <object>objects\obj_hard</object>
+        <object>objects\obj_scrabble_on</object>
+        <object>objects\obj_scrabble_off</object>
+        <object>objects\obj_combo_off</object>
+        <object>objects\obj_combo_on</object>
+        <object>objects\obj_hp_100</object>
+        <object>objects\obj_hp_200</object>
+        <object>objects\obj_hp_300</object>
+        <object>objects\obj_goal_100</object>
+        <object>objects\obj_goal_200</object>
+        <object>objects\obj_goal_300</object>
+        <object>objects\obj_rounds_5</object>
+        <object>objects\obj_rounds_10</object>
+        <object>objects\obj_rounds_15</object>
+      </objects>
+      <object>objects\obj_options_select</object>
+      <object>objects\obj_diff_select</object>
+      <object>objects\obj_scrabble_select</object>
+      <object>objects\obj_combo_select</object>
+      <object>objects\obj_hp_select</object>
+      <object>objects\obj_goal_select</object>
+      <object>objects\obj_rounds_select</object>
+      <object>objects\obj_diff</object>
+      <object>objects\obj_scrabble</object>
+      <object>objects\obj_combo</object>
+      <object>objects\obj_hp</object>
+      <object>objects\obj_rounds</object>
+      <object>objects\obj_goal</object>
+      <object>objects\obj_op_back</object>
+    </objects>
     <objects name="menu-title">
+      <object>objects\obj_title_select</object>
       <object>objects\obj_play</object>
       <object>objects\obj_options</object>
       <object>objects\obj_quit</object>
-      <object>objects\obj_title_select</object>
-      <object>objects\parent_menus</object>
     </objects>
     <object>objects\obj_enemy</object>
     <object>objects\obj_gamemode</object>
-    <object>objects\obj_optionXX</object>
     <object>objects\obj_player</object>
   </objects>
   <rooms name="rooms">

@@ -1,4 +1,4 @@
-switch(mpos) {
+switch(selected) {
     case 0:  break;
     
     case 1:  break;
