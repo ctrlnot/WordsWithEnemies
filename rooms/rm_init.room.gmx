@@ -12,32 +12,18 @@
   <showcolour>-1</showcolour>
   <code>randomize();
 
-enum game_state {
-    typing,
-    firing
-}
-
 if(file_exists("Data.sav")) {
     ini_open("Data.sav");
-        // 0 - easy; 1 - average; 2 - hard
         global.difficulty = ini_read_real("Options", "difficulty", 0);
-        
-        // 0 - Off; 1 - On
-        global.scrabble = ini_read_real("Options", "scrabble", 0);   
+        global.scrabble = ini_read_real("Options", "scrabble", 0);
         global.combo = ini_read_real("Options", "combo", 0);
-        
-        // 
-        global.hp = floor(ini_read_real("Options", "hp", 0));
-        global.goal = floor(ini_read_real("Options", "goal", 0));
-                
-        //
-        global.rounds = floor(ini_read_real("Options", "rounds", 0));
-        
+        global.hp = ini_read_real("Options", "hp", 0);
+        global.goal = ini_read_real("Options", "goal", 0);
+        global.rounds = ini_read_real("Options", "rounds", 0);
     ini_close();
 } else {
     // i dont know what to do with this yet :(
 }
-
 
 room_goto(rm_title);</code>
   <enableViews>0</enableViews>

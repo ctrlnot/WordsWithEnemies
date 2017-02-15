@@ -48,30 +48,86 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var playerWord = obj_player.word;
-var enemyWord = obj_enemy.word;
+            <string>var playerWord = string(obj_player.word);
+var enemyWord = string(obj_enemy.word);
 
-if(scr_calculate(playerWord) &gt; scr_calculate(enemyWord)) {
+var playerLettersLeft = "";
+var enemyLettersLeft = "";
+
+var playerScore = 0;
+var enemyScore = 0;
+
+var playerCounter = 0; // decrease damage to be dealt from the player because of duplicate letters
+var enemyCounter = 0; // decrease damage to be dealt from the enemy because of duplicate letters
+
+if(global.combo) {
+    // anti duplicate letters huehuehue
+    
+    var newPlayerWord = scr_anti_dup(playerWord, enemyWord, true);
+    var newEnemyWord = scr_anti_dup(enemyWord, playerWord, true);
+
+    enemyCounter += scr_anti_dup(playerWord, enemyWord, false);
+    playerCounter += scr_anti_dup(enemyWord, playerWord, false);
+    
+    playerLettersLeft += scr_letters_left(newPlayerWord, newEnemyWord);
+    enemyLettersLeft += scr_letters_left(newEnemyWord, newPlayerWord);
+    
+    playerScore += scr_str_val(playerLettersLeft);
+    enemyScore += scr_str_val(enemyLettersLeft);
+} else {
+    // classic mode
+
+    playerLettersLeft += scr_letters_left(newPlayerWord, newEnemyWord);
+    enemyLettersLeft += scr_letters_left(newEnemyWord, newPlayerWord);
+    
+    playerScore += scr_str_val(playerLettersLeft);
+    enemyScore += scr_str_val(enemyLettersLeft);
+}
+
+if(playerScore &gt; enemyScore) {
     show_message(
-                "You: " + string(scr_calculate(playerWord)) +
-                "#Enemy: " + string(scr_calculate(enemyWord)) +
-                "#You wins!"
+                "You: " + string(playerScore) +
+                "#Letters left: " + playerLettersLeft + 
+                "#Enemy: " + string(enemyScore) +
+                "#Letters Left: " + enemyLettersLeft +
+                "#You win!"
                 );
+                
+    obj_player.hp -= enemyScore;
+    obj_enemy.hp -= playerScore;
+} else if (playerScore &lt; enemyScore) {
+    show_message(
+                "You: " + string(playerScore) +
+                "#Letters left: " + playerLettersLeft + 
+                "#Enemy: " + string(enemyScore) +
+                "#Letters Left: " + enemyLettersLeft +
+                "#Enemy win!"
+                );
+                
+    obj_player.hp -= enemyScore;
+    obj_enemy.hp -= playerScore;
 } else {
     show_message(
-                "You: " + string(scr_calculate(playerWord)) +
-                "#Enemy: " + string(scr_calculate(enemyWord)) +
-                "#Enemy wins!"
+                "You: " + string(playerScore) +
+                "#Letters left: " + playerLettersLeft + 
+                "#Enemy: " + string(enemyScore) +
+                "#Letters Left: " + enemyLettersLeft +
+                "##It's a fucking tie!"
                 );
 }
 
+if(obj_player.hp &lt; 1 || obj_enemy.hp &lt; 1) {
+    if(obj_player.hp &lt; 1) {
+        show_message("Enemy Wins!");
+    } else {
+        show_message("You win!");
+    }
+    
+    obj_player.hp = scr_apply_option("hp", global.hp);
+    obj_enemy.hp = scr_apply_option("hp", global.hp);
+}
+
 obj_state.state = game_state.typing;
-
-
-
-
-
-
 </string>
           </argument>
         </arguments>
@@ -95,8 +151,32 @@ obj_state.state = game_state.typing;
           <argument>
             <kind>1</kind>
             <string>if(state == game_state.firing) {
-    if(alarm[0] &lt; 0) alarm[0] = 180;
+    if(alarm[0] &lt; 0) alarm[0] = 60;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(64, 64, string(obj_player.hp));
+draw_text(room_width-64, 64, string(obj_enemy.hp));
 </string>
           </argument>
         </arguments>

@@ -104,6 +104,7 @@ boxWidth = text_width + (padding * 2);
 boxHeight = text_height + (padding * 2);
 
 if(obj_state.state == game_state.typing) selected = true;
+
 if(obj_state.state == game_state.firing) text = "";
 
 </string>

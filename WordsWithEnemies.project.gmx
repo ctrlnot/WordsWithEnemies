@@ -482,25 +482,31 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_menu_title.gml</script>
-    <script>scripts\scr_gamemode.gml</script>
-    <script>scripts\scr_letterObj.gml</script>
-    <script>scripts\scr_motion.gml</script>
-    <script>scripts\scr_text.gml</script>
-    <scripts name="words">
+    <scripts name="menus">
+      <script>scripts\scr_menu_title.gml</script>
+      <script>scripts\scr_gamemode.gml</script>
+      <script>scripts\scr_apply_option.gml</script>
+      <script>scripts\scr_menu_save.gml</script>
+    </scripts>
+    <scripts name="letters&amp;words">
       <script>scripts\scr_isValid.gml</script>
       <script>scripts\scr_randWord.gml</script>
       <script>scripts\scr_split.gml</script>
       <script>scripts\scr_value.gml</script>
-      <script>scripts\scr_calculate.gml</script>
+      <script>scripts\scr_letters_left.gml</script>
+      <script>scripts\scr_anti_dup.gml</script>
+      <script>scripts\scr_str_val.gml</script>
+      <script>scripts\scr_letterObj.gml</script>
     </scripts>
-    <script>scripts\scr_menu_save.gml</script>
+    <script>scripts\scr_motion.gml</script>
+    <script>scripts\scr_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
     <object>objects\par_menus</object>
+    <object>objects\par_players</object>
     <objects name="gameplay">
       <object>objects\obj_input</object>
       <object>objects\obj_state</object>
@@ -554,8 +560,8 @@
       <object>objects\obj_quit</object>
     </objects>
     <object>objects\obj_enemy</object>
-    <object>objects\obj_gamemode</object>
     <object>objects\obj_player</object>
+    <object>objects\obj_gamemode</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

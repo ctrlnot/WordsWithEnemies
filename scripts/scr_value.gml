@@ -1,18 +1,31 @@
 /// scr_value(letter);
-
 var l = string(argument0);
 
-if(l == "a" || l == "e" || l == "o" || l == "t" || l == "i" ||
-   l == "n" || l == "r" || l == "s" || l == "l" || l == "u") { return 1; }
-  
-if(l == "d" || l == "g") { return 2; }
-
-if(l == "c" || l == "m" || l == "b" || l == "p") { return 3; }
-
-if(l == "h" || l == "f" || l == "w" || l == "y" || l == "v") { return 4; }
-
-if(l == "k") { return 5; }
-
-if(l == "j" || l == "x") { return 8; }
-
-if(l == "q" || l == "z") { return 10; }
+switch(global.scrabble) {
+    
+    case 1: switch(l) {
+                case "a": case "e": case "o": case "t": case "i": 
+                case "n": case "r": case "s": case "l": case "u": 
+                return 1; break;
+                
+                case "d": case "g":
+                return 2; break;
+                
+                case "c": case "m": case "b": case "p":
+                return 3; break;
+                
+                case "h": case "f": case "w": case "y": case "v":
+                return 4; break;
+                
+                case "k":
+                return 5; break;
+                
+                case "j": case "x":
+                return 8; break;
+                
+                case "q": case "z":
+                return 10; break;
+            }
+    case 0: default:
+            return 1; break;
+}
