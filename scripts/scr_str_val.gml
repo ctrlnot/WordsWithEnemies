@@ -1,6 +1,6 @@
 /// scr_str_val(string);
 
-var str = argument0;
+var str = string(argument0);
 var val = 0;
 
 for(var i = 1; i <= string_length(str); i++) {

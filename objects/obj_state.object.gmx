@@ -77,8 +77,8 @@ if(global.combo) {
 } else {
     // classic mode
 
-    playerLettersLeft += scr_letters_left(newPlayerWord, newEnemyWord);
-    enemyLettersLeft += scr_letters_left(newEnemyWord, newPlayerWord);
+    playerLettersLeft += scr_letters_left(playerWord, enemyWord);
+    enemyLettersLeft += scr_letters_left(enemyWord, playerWord);
     
     playerScore += scr_str_val(playerLettersLeft);
     enemyScore += scr_str_val(enemyLettersLeft);

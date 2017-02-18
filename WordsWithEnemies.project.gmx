@@ -482,12 +482,6 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="menus">
-      <script>scripts\scr_menu_title.gml</script>
-      <script>scripts\scr_gamemode.gml</script>
-      <script>scripts\scr_apply_option.gml</script>
-      <script>scripts\scr_menu_save.gml</script>
-    </scripts>
     <scripts name="letters&amp;words">
       <script>scripts\scr_isValid.gml</script>
       <script>scripts\scr_randWord.gml</script>
@@ -497,6 +491,14 @@
       <script>scripts\scr_anti_dup.gml</script>
       <script>scripts\scr_str_val.gml</script>
       <script>scripts\scr_letterObj.gml</script>
+      <script>scripts\scr_gen_words.gml</script>
+      <script>scripts\scr_sort_words.gml</script>
+    </scripts>
+    <scripts name="menus">
+      <script>scripts\scr_menu_title.gml</script>
+      <script>scripts\scr_gamemode.gml</script>
+      <script>scripts\scr_apply_option.gml</script>
+      <script>scripts\scr_menu_save.gml</script>
     </scripts>
     <script>scripts\scr_motion.gml</script>
     <script>scripts\scr_text.gml</script>
