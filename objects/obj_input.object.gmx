@@ -197,9 +197,7 @@ draw_set_valign(fa_top);
           <argument>
             <kind>1</kind>
             <string>obj_player.word = obj_input.text;
-obj_enemy.word = scr_randWord();
-
-//show_message(scr_isValid(obj_player.word));
+obj_enemy.word = scr_ai_word();
 
 if(!scr_isValid(obj_player.word)) {
     show_message("Invalid word input!");

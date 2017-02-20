@@ -483,16 +483,23 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="letters&amp;words">
-      <script>scripts\scr_isValid.gml</script>
-      <script>scripts\scr_randWord.gml</script>
-      <script>scripts\scr_split.gml</script>
-      <script>scripts\scr_value.gml</script>
-      <script>scripts\scr_letters_left.gml</script>
-      <script>scripts\scr_anti_dup.gml</script>
-      <script>scripts\scr_str_val.gml</script>
-      <script>scripts\scr_letterObj.gml</script>
-      <script>scripts\scr_gen_words.gml</script>
-      <script>scripts\scr_sort_words.gml</script>
+      <scripts name="generation">
+        <script>scripts\scr_ai_word.gml</script>
+        <script>scripts\scr_gen_words.gml</script>
+        <script>scripts\scr_sort_words.gml</script>
+        <script>scripts\scr_randWord.gml</script>
+      </scripts>
+      <scripts name="validation">
+        <script>scripts\scr_isValid.gml</script>
+        <script>scripts\scr_value.gml</script>
+        <script>scripts\scr_letters_left.gml</script>
+        <script>scripts\scr_str_val.gml</script>
+      </scripts>
+      <scripts name="edit">
+        <script>scripts\scr_split.gml</script>
+        <script>scripts\scr_text.gml</script>
+        <script>scripts\scr_anti_dup.gml</script>
+      </scripts>
     </scripts>
     <scripts name="menus">
       <script>scripts\scr_menu_title.gml</script>
@@ -501,7 +508,7 @@
       <script>scripts\scr_menu_save.gml</script>
     </scripts>
     <script>scripts\scr_motion.gml</script>
-    <script>scripts\scr_text.gml</script>
+    <script>scripts\scr_letterObj.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_reg</font>
