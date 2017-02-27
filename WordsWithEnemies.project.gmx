@@ -478,6 +478,34 @@
       <sprite>sprites\spr_num_10</sprite>
       <sprite>sprites\spr_num_15</sprite>
     </sprites>
+    <sprites name="letters">
+      <sprite>sprites\spr_a</sprite>
+      <sprite>sprites\spr_b</sprite>
+      <sprite>sprites\spr_c</sprite>
+      <sprite>sprites\spr_d</sprite>
+      <sprite>sprites\spr_e</sprite>
+      <sprite>sprites\spr_f</sprite>
+      <sprite>sprites\spr_g</sprite>
+      <sprite>sprites\spr_h</sprite>
+      <sprite>sprites\spr_i</sprite>
+      <sprite>sprites\spr_j</sprite>
+      <sprite>sprites\spr_k</sprite>
+      <sprite>sprites\spr_l</sprite>
+      <sprite>sprites\spr_m</sprite>
+      <sprite>sprites\spr_n</sprite>
+      <sprite>sprites\spr_o</sprite>
+      <sprite>sprites\spr_p</sprite>
+      <sprite>sprites\spr_q</sprite>
+      <sprite>sprites\spr_r</sprite>
+      <sprite>sprites\spr_s</sprite>
+      <sprite>sprites\spr_t</sprite>
+      <sprite>sprites\spr_u</sprite>
+      <sprite>sprites\spr_v</sprite>
+      <sprite>sprites\spr_w</sprite>
+      <sprite>sprites\spr_x</sprite>
+      <sprite>sprites\spr_y</sprite>
+      <sprite>sprites\spr_z</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -518,8 +546,6 @@
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
-    <object>objects\par_menus</object>
-    <object>objects\par_players</object>
     <objects name="gameplay">
       <object>objects\par_input</object>
       <object>objects\obj_input_g1</object>
@@ -573,9 +599,40 @@
       <object>objects\obj_options</object>
       <object>objects\obj_quit</object>
     </objects>
+    <objects name="letters">
+      <object>objects\par_letters</object>
+      <object>objects\obj_a</object>
+      <object>objects\obj_b</object>
+      <object>objects\obj_c</object>
+      <object>objects\obj_d</object>
+      <object>objects\obj_e</object>
+      <object>objects\obj_f</object>
+      <object>objects\obj_g</object>
+      <object>objects\obj_h</object>
+      <object>objects\obj_i</object>
+      <object>objects\obj_j</object>
+      <object>objects\obj_k</object>
+      <object>objects\obj_l</object>
+      <object>objects\obj_m</object>
+      <object>objects\obj_n</object>
+      <object>objects\obj_o</object>
+      <object>objects\obj_p</object>
+      <object>objects\obj_q</object>
+      <object>objects\obj_r</object>
+      <object>objects\obj_s</object>
+      <object>objects\obj_t</object>
+      <object>objects\obj_u</object>
+      <object>objects\obj_v</object>
+      <object>objects\obj_w</object>
+      <object>objects\obj_x</object>
+      <object>objects\obj_y</object>
+      <object>objects\obj_z</object>
+    </objects>
+    <object>objects\obj_gamemode</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_player</object>
-    <object>objects\obj_gamemode</object>
+    <object>objects\par_menus</object>
+    <object>objects\par_players</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

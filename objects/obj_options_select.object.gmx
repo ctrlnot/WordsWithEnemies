@@ -84,18 +84,18 @@ switch(selected) {
             obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 1;
     break;
     default: obj_diff.selected = 1; obj_scrabble.selected = 0; obj_combo.selected = 0; obj_hp.selected = 0;
-            obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
+             obj_rounds.selected = 0; obj_goal.selected = 0; obj_op_back.selected = 0;
     break;
 }
-
-// Store choices
-
 
 // Select menu
 var push;
 push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space), keyboard_check_released(vk_escape), 0);
 
 if(push) scr_menu_save();
+
+// Escape exit
+if(keyboard_check_released(vk_escape)) room_goto(rm_title);
 
 </string>
           </argument>
