@@ -483,16 +483,27 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="letters&amp;words">
-      <script>scripts\scr_isValid.gml</script>
-      <script>scripts\scr_randWord.gml</script>
-      <script>scripts\scr_split.gml</script>
-      <script>scripts\scr_value.gml</script>
-      <script>scripts\scr_letters_left.gml</script>
-      <script>scripts\scr_anti_dup.gml</script>
-      <script>scripts\scr_str_val.gml</script>
-      <script>scripts\scr_letterObj.gml</script>
-      <script>scripts\scr_gen_words.gml</script>
-      <script>scripts\scr_sort_words.gml</script>
+      <scripts name="generate">
+        <script>scripts\scr_ai_word.gml</script>
+        <script>scripts\scr_rand_letter.gml</script>
+        <script>scripts\scr_gen_letters.gml</script>
+        <script>scripts\scr_letterObj.gml</script>
+        <script>scripts\scr_gen_words.gml</script>
+        <script>scripts\scr_randWord.gml</script>
+      </scripts>
+      <scripts name="validate">
+        <script>scripts\scr_is_exists.gml</script>
+        <script>scripts\scr_value.gml</script>
+        <script>scripts\scr_isValid.gml</script>
+        <script>scripts\scr_letters_left.gml</script>
+        <script>scripts\scr_str_val.gml</script>
+      </scripts>
+      <scripts name="edit">
+        <script>scripts\scr_jumble.gml</script>
+        <script>scripts\scr_sort_words.gml</script>
+        <script>scripts\scr_anti_dup.gml</script>
+        <script>scripts\scr_split.gml</script>
+      </scripts>
     </scripts>
     <scripts name="menus">
       <script>scripts\scr_menu_title.gml</script>
@@ -510,7 +521,8 @@
     <object>objects\par_menus</object>
     <object>objects\par_players</object>
     <objects name="gameplay">
-      <object>objects\obj_input</object>
+      <object>objects\par_input</object>
+      <object>objects\obj_input_g1</object>
       <object>objects\obj_state</object>
     </objects>
     <objects name="menu-options">
@@ -570,6 +582,7 @@
     <room>rooms\rm_title</room>
     <room>rooms\rm_gamemode</room>
     <room>rooms\rm_game1</room>
+    <room>rooms\rm_game2</room>
     <room>rooms\rm_options</room>
   </rooms>
   <help>

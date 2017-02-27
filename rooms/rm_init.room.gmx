@@ -7,10 +7,18 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>randomize();
+
+enum game_state {
+    typing,
+    firing
+}
+
+// static muna
+global.timelimit = 15;
 
 if(file_exists("Data.sav")) {
     ini_open("Data.sav");
