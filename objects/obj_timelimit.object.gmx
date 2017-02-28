@@ -25,9 +25,60 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>word = "";
-ready = 0;
-hp = scr_apply_option("hp", global.hp);
+            <string>time = 0;
+countdown = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>time++;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// start countdown
+if(alarm[0] &lt; 0) alarm[0] = room_speed;
+
+// start fire
+if(time == global.timelimit) {
+    
+}
 </string>
           </argument>
         </arguments>
@@ -50,14 +101,8 @@ hp = scr_apply_option("hp", global.hp);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-
-draw_set_font(f_reg);
-draw_set_color(c_black);
-draw_set_halign(fa_center);
-
-if(obj_state.state == game_state.firing) draw_text(x, y-48, word);
-
+            <string>if(time &lt; global.timelimit) draw_text(room_width/2, 64, string(time));
+else draw_text(room_width/2, 64, "Time's up! Firiiiiiiiing!");
 </string>
           </argument>
         </arguments>

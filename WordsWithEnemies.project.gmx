@@ -506,6 +506,7 @@
       <sprite>sprites\spr_y</sprite>
       <sprite>sprites\spr_z</sprite>
     </sprites>
+    <sprite>sprites\spr_textbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -541,15 +542,21 @@
     </scripts>
     <script>scripts\scr_motion.gml</script>
     <script>scripts\scr_text.gml</script>
+    <script>scripts\scr_typed.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
     <objects name="gameplay">
-      <object>objects\par_input</object>
-      <object>objects\obj_input_g1</object>
+      <objects name="g1">
+        <object>objects\obj_input_g1</object>
+        <object>objects\obj_inst_g1</object>
+        <object>objects\obj_start</object>
+      </objects>
       <object>objects\obj_state</object>
+      <object>objects\obj_timelimit</object>
+      <object>objects\par_input</object>
     </objects>
     <objects name="menu-options">
       <objects name="par-options">
@@ -633,6 +640,7 @@
     <object>objects\obj_player</object>
     <object>objects\par_menus</object>
     <object>objects\par_players</object>
+    <object>objects\obj_textbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
