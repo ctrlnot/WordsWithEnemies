@@ -10,7 +10,7 @@ var grav = argument5;
 var posY;
 
 if (cos(angle) != 0 && spd != 0) {
-    posY = -(grav/2) * ( power(xx-x0, 2) / (power(spd, 2) * power(cos(angle), 2)) ) + tan(angle) * (xx-x0) + y0 ;
+    posY = -(grav/2) * ( power(xx-x0, 2) / (power(spd, 2) * power(cos(angle), 2)) ) + tan(angle) * (xx-x0) + y0;
 } else {
     posY = 0;
 }

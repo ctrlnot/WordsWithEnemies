@@ -74,11 +74,6 @@ countdown = false;
             <kind>1</kind>
             <string>// start countdown
 if(alarm[0] &lt; 0) alarm[0] = room_speed;
-
-// start fire
-if(time == global.timelimit) {
-    
-}
 </string>
           </argument>
         </arguments>
@@ -102,7 +97,7 @@ if(time == global.timelimit) {
           <argument>
             <kind>1</kind>
             <string>if(time &lt; global.timelimit) draw_text(room_width/2, 64, string(time));
-else draw_text(room_width/2, 64, "Time's up! Firiiiiiiiing!");
+else draw_text(room_width/2, 64, "Firiiiiiiiing!");
 </string>
           </argument>
         </arguments>

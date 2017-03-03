@@ -74,9 +74,8 @@ start = 0;
             <kind>1</kind>
             <string>
 instance_create(64, 32, obj_state);
-instance_create(96, 32, obj_state);
-instance_create(128, 32, obj_timelimit);
-instance_create(160, 32, obj_textbox);
+instance_create(96, 32, obj_timelimit);
+instance_create(128, 32, obj_textbox);
 instance_create(128, 544, obj_player);
 instance_create(1152, 544, obj_enemy);
 

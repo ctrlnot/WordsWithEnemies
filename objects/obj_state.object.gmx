@@ -127,6 +127,11 @@ if(obj_player.hp &lt; 1 || obj_enemy.hp &lt; 1) {
     obj_enemy.hp = scr_apply_option("hp", global.hp);
 }
 
+// continue the game and reset
+obj_player.word = "";
+obj_textbox.text = "";
+obj_timelimit.time = 0;
+obj_textbox.fire = false;
 obj_state.state = game_state.typing;
 </string>
           </argument>
@@ -151,7 +156,7 @@ obj_state.state = game_state.typing;
           <argument>
             <kind>1</kind>
             <string>if(state == game_state.firing) {
-    if(alarm[0] &lt; 0) alarm[0] = 60;
+    if(alarm[0] &lt; 0) alarm[0] = 1;
 }
 </string>
           </argument>

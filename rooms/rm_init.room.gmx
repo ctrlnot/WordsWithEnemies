@@ -18,7 +18,7 @@ enum game_state {
 }
 
 // static muna
-global.timelimit = 15;
+global.timelimit = 5;
 
 if(file_exists("Data.sav")) {
     ini_open("Data.sav");
@@ -30,7 +30,14 @@ if(file_exists("Data.sav")) {
         global.rounds = ini_read_real("Options", "rounds", 0);
     ini_close();
 } else {
-    // i dont know what to do with this yet :(
+    ini_open("Data.sav");
+        ini_write_real("Options", "difficulty", 0);
+        ini_write_real("Options", "scrabble", 0);
+        ini_write_real("Options", "combo", 0);
+        ini_write_real("Options", "hp", 0);
+        ini_write_real("Options", "goal", 0);
+        ini_write_real("Options", "rounds", 0);
+    ini_close();
 }
 
 room_goto(rm_title);</code>

@@ -29,11 +29,16 @@
 x = room_width / 2;
 y = room_height / 2;
 text = "";
+arrOfWords[0] = ""; // initial list of existing words
 can_type = false;
 
 // text prop
 font = f_reg;
 font_size = font_get_size(font);
+
+// action
+fire = false;
+
 </string>
           </argument>
         </arguments>
@@ -56,7 +61,8 @@ font_size = font_get_size(font);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>can_type = true;
+            <string>if(!can_type &amp;&amp; obj_timelimit.time &lt; global.timelimit) can_type = true;
+
 obj_timelimit.countdown = true;
 </string>
           </argument>
@@ -81,10 +87,18 @@ obj_timelimit.countdown = true;
           <argument>
             <kind>1</kind>
             <string>// set type on
-if(alarm[0] &lt; 0) alarm[0] = room_speed;
+if(alarm[0] &lt; 0) alarm[0] = room_speed / 2;
 
 // Keyboard on
-if(can_type) scr_typed();
+if(can_type &amp;&amp; (!instance_exists(obj_invalid) || !instance_exists(obj_existing))) scr_typed();
+
+// Time's up!
+if(obj_timelimit.time &gt; global.timelimit &amp;&amp; !fire) scr_fire();
+
+// Go fire
+if(fire) obj_state.state = game_state.firing;
+
+
 </string>
           </argument>
         </arguments>
@@ -137,30 +151,28 @@ draw_text(x, y, text);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>arrOfWords[0] = "";
-
-obj_player.word = text;
+            <string>obj_player.word = text;
 obj_enemy.word = scr_ai_word();
 
 if(!scr_isValid(obj_player.word)) {                       // dictionary check
-    show_message("Invalid Word!!");
-    
+    //show_message("Invalid Word!!");
+    instance_create(room_width / 2, y - 100, obj_invalid);
     obj_state.state = game_state.typing;
-} else if (scr_is_exists(obj_player.word, arrOfWords) &amp;&amp; scr_is_exists(obj_enemy.word, arrOfWords)) { // existing check
-    show_message("Word Exists!!");
     
+} else if (scr_is_exists(obj_player.word, arrOfWords) || scr_is_exists(obj_enemy.word, arrOfWords)) { // existing check
+    //show_message("Word Exists!!");
+    instance_create(room_width / 2, y - 100, obj_existing);
     obj_state.state = game_state.typing;
+    
 } else {                                         
     // show_message("Not Exists!!");
     var j = array_length_1d(arrOfWords);
     arrOfWords[j] = obj_player.word;
     arrOfWords[j + 1] = obj_enemy.word;
     
-    // kill the countdown
-    obj_timelimit.time = 15;
-    
-    // fire
-    obj_state.state = game_state.firing;
+    // Fire already!
+    fire = true;
+    obj_timelimit.time = global.timelimit;
 }
 </string>
           </argument>
