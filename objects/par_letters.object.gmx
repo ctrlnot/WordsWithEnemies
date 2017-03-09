@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>sped = 9;
-angle = 60;
+angle = 120;
 grav = 0.08;
 fire = false;
 fired = true;
@@ -73,7 +73,7 @@ if(!fire){
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="0">
+    <event eventtype="4" ename="obj_floor">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -96,7 +96,7 @@ if(!fire){
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -120,7 +120,6 @@ for(var i = 0; i &lt; 32; i++){
     var setY = scr_motion(setX, sped, angle, 0, 0, grav);
     draw_set_color(c_red);
     draw_point(xstart+setX, ystart-setY);
-    
 }
 
 draw_text(32, 32, string(angle));

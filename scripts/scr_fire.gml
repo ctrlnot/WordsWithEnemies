@@ -19,4 +19,3 @@ if(!scr_isValid(text) && !fire) {
 }
 
 fire = true;
-

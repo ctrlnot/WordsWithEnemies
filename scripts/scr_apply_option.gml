@@ -22,7 +22,7 @@ switch(argument0) {
     
     case "hp": case "goal": {
         switch(argument1) {
-            case 0: return 100;         break;
+            case 0: return 20;         break;
             case 1: return 200;         break;
             case 2: return 300;         break;
             default: return 100;        break;
