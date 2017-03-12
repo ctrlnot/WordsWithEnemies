@@ -43,7 +43,7 @@ start = 0;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -66,18 +66,18 @@ start = 0;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_start</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
             <string>
-instance_create(64, 32, obj_state);
-instance_create(96, 32, obj_timelimit);
-instance_create(128, 32, obj_textbox);
-instance_create(128, 544, obj_player);
-instance_create(1152, 544, obj_enemy);
+instance_create(0, 0, obj_state);
+instance_create(0, 0, obj_timelimit);
+instance_create(0, 0, obj_textbox);
+instance_create(96, obj_p_floor.y - 40, obj_player); // (obj_e_floor.y + ((room_height - obj_e_floor.y) * 0.4))
+instance_create(room_width - 96, obj_e_floor.y - 40, obj_enemy);
 
 instance_destroy();
 </string>

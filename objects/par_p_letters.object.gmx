@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sped = 9.5;
-angle = 60;
+            <string>sped = 9.5;//9.5
+angle = obj_player.image_angle;//obj_player.image_angle55
 grav = 0.08;
 fire = false;
 fired = true;
@@ -49,38 +49,47 @@ rotate = choose(-1, 1);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
             <string>// If collides with enemy
-if(place_meeting(x, y, obj_e_floor)) {
+if(place_meeting(x, y, obj_e_floor)) {    
     obj_enemy.hp -= value;
     instance_destroy();
 }
+
+// Crash to enemy
+if(point_distance(x, y, obj_enemy.x, obj_enemy.y) &lt; point_distance(obj_ref.x, obj_ref.y, obj_enemy.x, obj_enemy.y) ) {
+    speed = random_range(5, 8);
+}
+
+// Adjust angle
+var diff = obj_enemy.y - obj_player.y;
+if(diff &gt; 100) sped = 10; else sped = 9.5;
 
 // For firing
 if(fire) {
     gravity = grav;
     image_angle += rotate;
+    
 }
 
 if(!fire){
     if(fired){
-        speed = sped;
         direction = angle;
+        speed = sped;
         fire = true;
     }
 }
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="4" ename="obj_e_floor">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -97,13 +106,38 @@ if(!fire){
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>var h;
+h = room_height - obj_e_floor.y - sprite_get_height(spr_water);
+obj_e_floor.y += floor(h * scr_value(l)*0.01);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>draw_self();
-
+/*
 for(var i = 0; i &lt; 32; i++){
     var setX = i * 32;
     var setY = scr_motion(setX, sped, angle, 0, 0, grav);
     draw_set_color(c_red);
-    //draw_point(xstart+setX, ystart-setY);
+    if(setY &gt; 0) draw_text(254, 254, "X: " + string(setX) + " Y: " + string(setY));
 }
 
 //draw_text(32, 32, string(angle));

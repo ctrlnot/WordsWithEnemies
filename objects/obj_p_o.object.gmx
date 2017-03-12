@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
-value = scr_value("o");
+l = "n";
+value = scr_value(l);
 </string>
           </argument>
         </arguments>

@@ -3,11 +3,35 @@
   <spriteName>spr_enemy</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>par_players</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,7 +49,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (counter % 10 == 0 &amp;&amp; onFire) {
+            <string>// Image angle
+image_angle = point_direction(obj_enemy.x, obj_enemy.y, obj_ref.x, obj_ref.y) - 25;
+
+// If touches floor
+if(place_meeting(x, y+1, obj_e_floor)) {
+    vsp = 0;
+} else {
+    vsp += grav;
+}
+
+y += vsp;
+
+// Firing
+if (counter % 5 == 0 &amp;&amp; onFire) { 
     if(word != "") {
         if (index &lt;= string_length(word)) {
             scr_letterObj(x-lengthdir_x(24, image_angle), y+lengthdir_y(24, image_angle), string_char_at(word, index), 0);

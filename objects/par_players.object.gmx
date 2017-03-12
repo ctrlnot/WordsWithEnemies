@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>word = "";
 ready = 0;
+
+vsp = 0;
+grav = 0.2;
+
 hp = scr_apply_option("hp", global.hp);
 
 </string>
@@ -51,7 +55,6 @@ hp = scr_apply_option("hp", global.hp);
             <kind>1</kind>
             <string>/// For firing event
 
-image_angle = 60;
 onFire = false;
 counter = 0; // for delay of spawning letters
 index = 1; // index counter of s t r i n g

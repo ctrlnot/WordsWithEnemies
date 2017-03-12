@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
+tmp = y;
 l = "a";
 value = scr_value(l);
 </string>

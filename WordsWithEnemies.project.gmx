@@ -539,6 +539,10 @@
     <sprite>sprites\spr_textbox</sprite>
     <sprite>sprites\spr_p_floor</sprite>
     <sprite>sprites\spr_e_floor</sprite>
+    <sprite>sprites\spr_water</sprite>
+    <sprite>sprites\dummyA</sprite>
+    <sprite>sprites\dummyB</sprite>
+    <sprite>sprites\spr_dot</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -597,8 +601,9 @@
       <object>objects\obj_existing</object>
     </objects>
     <objects name="letters">
+      <object>objects\par_p_letters</object>
+      <object>objects\par_e_letters</object>
       <objects name="player">
-        <object>objects\par_p_letters</object>
         <object>objects\obj_p_a</object>
         <object>objects\obj_p_b</object>
         <object>objects\obj_p_c</object>
@@ -627,7 +632,6 @@
         <object>objects\obj_p_z</object>
       </objects>
       <objects name="enemy">
-        <object>objects\par_e_letters</object>
         <object>objects\obj_e_a</object>
         <object>objects\obj_e_b</object>
         <object>objects\obj_e_c</object>
@@ -712,6 +716,12 @@
     <object>objects\obj_textbox</object>
     <object>objects\par_menus</object>
     <object>objects\par_players</object>
+    <object>objects\obj_water</object>
+    <object>objects\obj_dA</object>
+    <object>objects\obj_dB</object>
+    <object>objects\obj_camera</object>
+    <object>objects\obj_ref</object>
+    <object>objects\o_exit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
