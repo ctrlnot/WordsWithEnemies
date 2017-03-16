@@ -12,4 +12,3 @@ obj_timelimit.time = 0;
 
 obj_textbox.text = "";
 obj_textbox.fire = false;
-

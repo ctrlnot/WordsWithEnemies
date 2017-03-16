@@ -18,7 +18,7 @@ enum game_state {
 }
 
 // static muna
-global.timelimit = 5;
+global.timelimit = 10;
 
 if(file_exists("Data.sav")) {
     ini_open("Data.sav");

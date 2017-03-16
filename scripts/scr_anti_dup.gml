@@ -24,4 +24,3 @@ if(argument2) {
     return counter;
 }
 
-

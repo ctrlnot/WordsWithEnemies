@@ -18,4 +18,3 @@ for(var i = 0; i < ds_list_size(letters); i++) {
 return jumbledLetters;
 
 ds_list_destroy(letters);
-

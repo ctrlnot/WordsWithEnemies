@@ -49,8 +49,7 @@ y = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(instance_exists(obj_player) &amp;&amp; instance_exists(obj_enemy)) {
+            <string>if(instance_exists(obj_player) &amp;&amp; instance_exists(obj_enemy)) {
     //difX = obj_player.x - obj_enemy.x / 2;
     difY = obj_player.y - obj_enemy.y / 2;
     if(obj_player.y &gt; obj_enemy) y = obj_player.y - difY; else y = obj_enemy.y - difY;
@@ -78,7 +77,7 @@ if(instance_exists(obj_player) &amp;&amp; instance_exists(obj_enemy)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>/*draw_self();
 draw_set_halign(fa_center);
 
 draw_text(room_width / 2, room_height / 2 + 100, "My Y: " + string(y));

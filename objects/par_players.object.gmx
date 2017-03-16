@@ -28,9 +28,6 @@
             <string>word = "";
 ready = 0;
 
-vsp = 0;
-grav = 0.2;
-
 hp = scr_apply_option("hp", global.hp);
 
 </string>
@@ -87,7 +84,7 @@ draw_set_font(f_reg);
 draw_set_color(c_black);
 draw_set_halign(fa_center);
 
-if(obj_state.state == game_state.firing) draw_text(x, y-48, word);
+if(obj_state.state == game_state.firing) draw_text(x, y-96, word);
 
 </string>
           </argument>

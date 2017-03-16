@@ -19,14 +19,13 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sped = 9.5;
-angle = obj_enemy.image_angle;
+            <string>angle = obj_enemy.image_angle;
 grav = 0.08; // 0.08
 fire = false;
 fired = true;
@@ -55,20 +54,8 @@ rotate = choose(-1, 1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// If collides with player
-if(place_meeting(x, y, obj_p_floor)) {
-    obj_player.hp -= value;
-    instance_destroy();
-}
-
-// Crash to player
-if(point_distance(x, y, obj_player.x, obj_player.y) &lt; point_distance(obj_ref.x, obj_ref.y, obj_player.x, obj_player.y) ) {
-    speed = random_range(5, 8);
-}
-
-// Adjust angle
-var diff = obj_player.y - obj_enemy.y;
-if(diff &gt; 100) sped = 10; else sped = 9.5;
+            <string>// Speeeeeeeed
+sped = obj_adjuster.e_spd;
 
 // For firing
 if(fire) {
@@ -81,6 +68,15 @@ if(!fire){
         speed = sped;
         direction = angle;
         fire = true;
+    }
+}
+
+// Crash to player
+if(point_distance(x, y, obj_player.x, obj_player.y) &lt; point_distance(obj_ref.x, obj_ref.y, obj_player.x, obj_player.y) ) {
+    if(obj_adjuster.e_diff &gt; 150) {
+        speed = random_range(6, 9);
+    } else {
+        speed = random_range(5, 8);
     }
 }
 </string>
@@ -105,8 +101,9 @@ if(!fire){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var h = room_height - obj_p_floor.y - sprite_get_height(spr_water);
-obj_p_floor.y += floor(h * scr_value(l)*0.01);
+            <string>obj_p_floor.y = obj_p_floor.y + (value * 500/250);
+obj_player.hp -= value;
+instance_destroy();
 </string>
           </argument>
         </arguments>

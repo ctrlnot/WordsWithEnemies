@@ -27,4 +27,3 @@ if(reverse){
     return splitArr;
 }
 
-

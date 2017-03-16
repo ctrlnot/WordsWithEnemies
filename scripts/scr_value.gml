@@ -29,4 +29,3 @@ if(global.scrabble) {
 } else {
     return 1;
 }
-

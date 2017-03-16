@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>state = game_state.typing; // default game state
 reset = false; // reset values after firing
+rounds = 0;
+wins = false;
 
 firingCountdown = 8;
 </string>
@@ -76,7 +78,7 @@ firingCountdown = 8;
           <argument>
             <kind>1</kind>
             <string>// Start firing
-if(state == game_state.firing) {
+if(state == game_state.firing &amp;&amp; !wins) {
     obj_player.onFire = true;
     obj_enemy.onFire = true;
     
@@ -84,10 +86,27 @@ if(state == game_state.firing) {
 }
 
 // Switch to typing and continue
-if(firingCountdown &lt; 1) {
+if(firingCountdown &lt; 1 &amp;&amp; !wins) {
     state = game_state.typing;
-    firingCountdown = 8;
+    firingCountdown = 5;
+    rounds++;
     
+    if(position_meeting(obj_player.x, obj_player.y, obj_water)) {
+        wins = true;
+        instance_create(room_width / 2, room_height / 2, obj_lose);
+        //show_message("Enemy wins!");
+    } else if (position_meeting(obj_enemy.x, obj_enemy.y, obj_water)) {
+        wins = true;
+        instance_create(room_width / 2, room_height / 2, obj_win);
+        //show_message("You win!");
+    }  else {
+        // continue
+        scr_reset();
+    }
+}
+
+
+/*
     if(obj_player.hp &lt; 1 || obj_enemy.hp &lt; 1) {
         // full reset
         if(obj_player.hp &lt; 1) {
@@ -104,101 +123,6 @@ if(firingCountdown &lt; 1) {
         // continue
         scr_reset();
     }
-}
-
-
-/*
-if(state == game_state.firing) {
-    var playerWord = string(obj_player.word);
-    var enemyWord = string(obj_enemy.word);
-    
-    var playerLettersLeft = "";
-    var enemyLettersLeft = "";
-    
-    var playerScore = 0;
-    var enemyScore = 0;
-    
-    var playerCounter = 0; // decrease damage to be dealt from the player because of duplicate letters
-    var enemyCounter = 0; // decrease damage to be dealt from the enemy because of duplicate letters
-    
-    if(global.combo) {
-        // anti duplicate letters huehuehue
-        
-        var newPlayerWord = scr_anti_dup(playerWord, enemyWord, true);
-        var newEnemyWord = scr_anti_dup(enemyWord, playerWord, true);
-    
-        enemyCounter += scr_anti_dup(playerWord, enemyWord, false);
-        playerCounter += scr_anti_dup(enemyWord, playerWord, false);
-        
-        playerLettersLeft += scr_letters_left(newPlayerWord, newEnemyWord);
-        enemyLettersLeft += scr_letters_left(newEnemyWord, newPlayerWord);
-        
-        playerScore += scr_str_val(playerLettersLeft);
-        enemyScore += scr_str_val(enemyLettersLeft);
-    } else {
-        // classic mode
-    
-        playerLettersLeft += scr_letters_left(playerWord, enemyWord);
-        enemyLettersLeft += scr_letters_left(enemyWord, playerWord);
-        
-        playerScore += scr_str_val(playerLettersLeft);
-        enemyScore += scr_str_val(enemyLettersLeft);
-    }
-    
-    if(playerScore &gt; enemyScore) {
-        show_message(
-                    "You: " + string(playerScore) +
-                    "#Letters left: " + playerLettersLeft + 
-                    "#Enemy: " + string(enemyScore) +
-                    "#Letters Left: " + enemyLettersLeft +
-                    "#You win!"
-                    );
-                    
-        obj_player.hp -= enemyScore;
-        obj_enemy.hp -= playerScore;
-    } else if (playerScore &lt; enemyScore) {
-        show_message(
-                    "You: " + string(playerScore) +
-                    "#Letters left: " + playerLettersLeft + 
-                    "#Enemy: " + string(enemyScore) +
-                    "#Letters Left: " + enemyLettersLeft +
-                    "#Enemy win!"
-                    );
-                    
-        obj_player.hp -= enemyScore;
-        obj_enemy.hp -= playerScore;
-    } else {
-        show_message(
-                    "You: " + string(playerScore) +
-                    "#Letters left: " + playerLettersLeft + 
-                    "#Enemy: " + string(enemyScore) +
-                    "#Letters Left: " + enemyLettersLeft +
-                    "##It's a fucking tie!"
-                    );
-    }
-    
-    if(obj_player.hp &lt; 1 || obj_enemy.hp &lt; 1) {
-        if(obj_player.hp &lt; 1) {
-            show_message("Enemy Wins!");
-        } else {
-            show_message("You win!");
-        }
-        
-        obj_player.hp = scr_apply_option("hp", global.hp);
-        obj_enemy.hp = scr_apply_option("hp", global.hp);
-    }
-    
-    
-    // continue the game
-    obj_player.word = "";
-    obj_textbox.text = "";
-    obj_timelimit.time = 0;
-    obj_textbox.fire = false;
-    obj_state.state = game_state.typing;
-}*/
-
-
-
 </string>
           </argument>
         </arguments>
@@ -221,13 +145,13 @@ if(state == game_state.firing) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(64, 64, string(obj_player.hp));
-draw_text(room_width-64, 64, string(obj_enemy.hp));
-
+            <string>//draw_text(64, 64, string(obj_player.hp));
+//draw_text(room_width-64, 64, string(obj_enemy.hp));
+/*
 draw_text(64, 16, "FPS: " + string(fps));
 draw_text(64, 96, "P Floor: " + string(obj_p_floor.y));
 draw_text(64, 128, "E Floor: " + string(obj_e_floor.y));
-draw_text(64, 160, "Floor Diff: " + string(abs(obj_e_floor.y - obj_p_floor.y)));
+draw_text(64, 160, "Floor Diff: " + string(floor(abs(obj_player.y - obj_enemy.y))));
 
 </string>
           </argument>

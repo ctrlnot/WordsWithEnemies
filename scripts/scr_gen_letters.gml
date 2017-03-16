@@ -1,4 +1,4 @@
-/// scr_gen_letters();
+/// scr_gen_letters(returnType);
 
 var randLetter = scr_rand_letter();
 var list = ds_list_create();
@@ -15,7 +15,11 @@ while(!file_text_eof(file)) {
 }
 file_text_close(file);
 
-ds_list_shuffle(list);
-return ds_list_find_value(list, 0);
-ds_list_destroy(list);
-
+if(argument0) {
+    return ds_list_find_value(list, 0);
+    ds_list_destroy(list);
+} else {
+    ds_list_shuffle(list);
+    return ds_list_find_value(list, 0);
+    ds_list_destroy(list);
+}

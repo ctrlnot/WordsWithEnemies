@@ -12,7 +12,7 @@ if(!scr_isValid(text) && !fire) {
     obj_player.word = "";
     text = "";
     
-} else {
+}  else {
     obj_player.word = text;
     
     var j = array_length_1d(arrOfWords);

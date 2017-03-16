@@ -1,5 +1,5 @@
 switch(selected) {
-    case 0: room_goto(rm_gamemode); break;
+    case 0: room_goto(rm_game1); break;
     
     case 1: room_goto(rm_options); break;
     

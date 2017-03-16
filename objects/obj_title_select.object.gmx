@@ -27,6 +27,17 @@
             <kind>1</kind>
             <string>menuSize = 3;
 selected = 0;
+posX = room_width / 4 - 100;
+
+obj_play.x = posX;
+obj_play.y = 175;
+
+obj_options.x = posX;
+obj_options.y = obj_play.y + 100;
+
+obj_quit.x = posX;
+obj_quit.y = obj_options.y + 90;
+
 </string>
           </argument>
         </arguments>

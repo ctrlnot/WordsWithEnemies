@@ -25,14 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sped = 9.5;//9.5
-angle = obj_player.image_angle;//obj_player.image_angle55
+            <string>//sped = 9.5;//9.5
+angle = obj_player.image_angle;
 grav = 0.08;
 fire = false;
 fired = true;
 rotate = choose(-1, 1);
 
-// angle to achieve: 60 &amp; 120
 </string>
           </argument>
         </arguments>
@@ -49,32 +48,19 @@ rotate = choose(-1, 1);
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// If collides with enemy
-if(place_meeting(x, y, obj_e_floor)) {    
-    obj_enemy.hp -= value;
-    instance_destroy();
-}
-
-// Crash to enemy
-if(point_distance(x, y, obj_enemy.x, obj_enemy.y) &lt; point_distance(obj_ref.x, obj_ref.y, obj_enemy.x, obj_enemy.y) ) {
-    speed = random_range(5, 8);
-}
-
-// Adjust angle
-var diff = obj_enemy.y - obj_player.y;
-if(diff &gt; 100) sped = 10; else sped = 9.5;
+            <string>// Speeeeeeeed
+sped = obj_adjuster.p_spd;
 
 // For firing
 if(fire) {
     gravity = grav;
     image_angle += rotate;
-    
 }
 
 if(!fire){
@@ -82,6 +68,15 @@ if(!fire){
         direction = angle;
         speed = sped;
         fire = true;
+    }
+}
+
+// Crash to enemy
+if(point_distance(x, y, obj_enemy.x, obj_enemy.y) &lt; point_distance(obj_ref.x, obj_ref.y, obj_enemy.x, obj_enemy.y) ) {
+    if(obj_adjuster.p_diff &gt; 150) {
+        speed = random_range(6, 9);
+    } else {
+        speed = random_range(5, 8);
     }
 }
 </string>
@@ -106,9 +101,9 @@ if(!fire){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var h;
-h = room_height - obj_e_floor.y - sprite_get_height(spr_water);
-obj_e_floor.y += floor(h * scr_value(l)*0.01);
+            <string>obj_e_floor.y = obj_e_floor.y + floor(value * 500/250);
+obj_enemy.hp -= value;
+instance_destroy();
 </string>
           </argument>
         </arguments>

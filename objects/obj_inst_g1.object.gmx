@@ -65,13 +65,20 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>obj_start</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!instance_exists(obj_start)) instance_create(128, 64, obj_start);
+            <string>
+instance_create(0, 0, obj_state);
+instance_create(0, 0, obj_timelimit);
+instance_create(0, 0, obj_textbox);
+instance_create(96, obj_p_floor.y - 40, obj_p_wheel);
+instance_create(96, obj_p_floor.y - 45, obj_player);
+instance_create(room_width - 96, obj_e_floor.y - 40, obj_e_wheel);
+instance_create(room_width - 96, obj_e_floor.y - 45, obj_enemy);
 
 instance_destroy();
 </string>

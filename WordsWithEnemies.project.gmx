@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="78" name="datafiles">
+  <datafiles number="79" name="datafiles">
     <datafile>
       <name>wordsA.txt</name>
       <exists>-1</exists>
@@ -446,38 +446,27 @@
       </ConfigOptions>
       <filename>wordsZ.txt</filename>
     </datafile>
+    <datafile>
+      <name>en1.txt</name>
+      <exists>-1</exists>
+      <size>1916184</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>en1.txt</filename>
+    </datafile>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_arrow</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_enemy</sprite>
-    <sprites name="menu-title">
-      <sprite>sprites\spr_quit</sprite>
-      <sprite>sprites\spr_options</sprite>
-      <sprite>sprites\spr_play</sprite>
-    </sprites>
-    <sprites name="menu-options">
-      <sprite>sprites\spr_diff</sprite>
-      <sprite>sprites\spr_scrabble</sprite>
-      <sprite>sprites\spr_combo</sprite>
-      <sprite>sprites\spr_hp</sprite>
-      <sprite>sprites\spr_rounds</sprite>
-      <sprite>sprites\spr_goal</sprite>
-      <sprite>sprites\spr_op_back</sprite>
-      <sprite>sprites\spr_easy</sprite>
-      <sprite>sprites\spr_ave</sprite>
-      <sprite>sprites\spr_hard</sprite>
-      <sprite>sprites\spr_on</sprite>
-      <sprite>sprites\spr_off</sprite>
-      <sprite>sprites\spr_num_100</sprite>
-      <sprite>sprites\spr_num_200</sprite>
-      <sprite>sprites\spr_num_300</sprite>
-      <sprite>sprites\spr_num_5</sprite>
-      <sprite>sprites\spr_num_10</sprite>
-      <sprite>sprites\spr_num_15</sprite>
-    </sprites>
     <sprites name="letters">
       <sprites name="player">
         <sprite>sprites\spr_p_a</sprite>
@@ -535,16 +524,90 @@
         <sprite>sprites\spr_e_y</sprite>
         <sprite>sprites\spr_e_z</sprite>
       </sprites>
+      <sprites name="drop">
+        <sprite>sprites\spr_d_a</sprite>
+        <sprite>sprites\spr_d_b</sprite>
+        <sprite>sprites\spr_d_c</sprite>
+        <sprite>sprites\spr_d_d</sprite>
+        <sprite>sprites\spr_d_e</sprite>
+        <sprite>sprites\spr_d_f</sprite>
+        <sprite>sprites\spr_d_g</sprite>
+        <sprite>sprites\spr_d_h</sprite>
+        <sprite>sprites\spr_d_i</sprite>
+        <sprite>sprites\spr_d_j</sprite>
+        <sprite>sprites\spr_d_k</sprite>
+        <sprite>sprites\spr_d_l</sprite>
+        <sprite>sprites\spr_d_m</sprite>
+        <sprite>sprites\spr_d_n</sprite>
+        <sprite>sprites\spr_d_o</sprite>
+        <sprite>sprites\spr_d_p</sprite>
+        <sprite>sprites\spr_d_q</sprite>
+        <sprite>sprites\spr_d_r</sprite>
+        <sprite>sprites\spr_d_s</sprite>
+        <sprite>sprites\spr_d_t</sprite>
+        <sprite>sprites\spr_d_u</sprite>
+        <sprite>sprites\spr_d_v</sprite>
+        <sprite>sprites\spr_d_w</sprite>
+        <sprite>sprites\spr_d_x</sprite>
+        <sprite>sprites\spr_d_y</sprite>
+        <sprite>sprites\spr_d_z</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\spr_textbox</sprite>
-    <sprite>sprites\spr_p_floor</sprite>
-    <sprite>sprites\spr_e_floor</sprite>
-    <sprite>sprites\spr_water</sprite>
-    <sprite>sprites\dummyA</sprite>
-    <sprite>sprites\dummyB</sprite>
+    <sprites name="menu-options">
+      <sprite>sprites\spr_diff</sprite>
+      <sprite>sprites\spr_scrabble</sprite>
+      <sprite>sprites\spr_combo</sprite>
+      <sprite>sprites\spr_hp</sprite>
+      <sprite>sprites\spr_rounds</sprite>
+      <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_op_back</sprite>
+      <sprite>sprites\spr_easy</sprite>
+      <sprite>sprites\spr_ave</sprite>
+      <sprite>sprites\spr_hard</sprite>
+      <sprite>sprites\spr_on</sprite>
+      <sprite>sprites\spr_off</sprite>
+      <sprite>sprites\spr_num_100</sprite>
+      <sprite>sprites\spr_num_200</sprite>
+      <sprite>sprites\spr_num_300</sprite>
+      <sprite>sprites\spr_num_5</sprite>
+      <sprite>sprites\spr_num_10</sprite>
+      <sprite>sprites\spr_num_15</sprite>
+    </sprites>
+    <sprites name="menu-title">
+      <sprite>sprites\spr_quit</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_play</sprite>
+    </sprites>
+    <sprites name="particles">
+      <sprite>sprites\spr_water_splash</sprite>
+      <sprite>sprites\spr_e_brick</sprite>
+      <sprite>sprites\spr_p_brick</sprite>
+      <sprite>sprites\spr_e_LBrick</sprite>
+      <sprite>sprites\spr_p_LBrick</sprite>
+    </sprites>
+    <sprites name="players">
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_p_wheel</sprite>
+      <sprite>sprites\spr_e_wheel</sprite>
+      <sprite>sprites\spr_player</sprite>
+    </sprites>
+    <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_dot</sprite>
+    <sprite>sprites\spr_textbox</sprite>
+    <sprite>sprites\spr_water</sprite>
+    <sprites name="towers">
+      <sprite>sprites\spr_e_floor</sprite>
+      <sprite>sprites\spr_p_floor</sprite>
+    </sprites>
+    <sprite>sprites\spr_escape</sprite>
+    <sprite>sprites\spr_lose</sprite>
+    <sprite>sprites\spr_win</sprite>
+    <sprite>sprites\spr_start</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_front</background>
+    <background>background\bg_opt</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="letters&amp;words">
@@ -555,6 +618,7 @@
         <script>scripts\scr_letterObj.gml</script>
         <script>scripts\scr_gen_words.gml</script>
         <script>scripts\scr_randWord.gml</script>
+        <script>scripts\scr_gen_drop.gml</script>
       </scripts>
       <scripts name="validate">
         <script>scripts\scr_is_exists.gml</script>
@@ -563,6 +627,7 @@
         <script>scripts\scr_letters_left.gml</script>
         <script>scripts\scr_str_val.gml</script>
         <script>scripts\scr_obj_val.gml</script>
+        <script>scripts\scr_in_jmb.gml</script>
       </scripts>
       <scripts name="edit">
         <script>scripts\scr_jumble.gml</script>
@@ -576,6 +641,7 @@
       <script>scripts\scr_gamemode.gml</script>
       <script>scripts\scr_apply_option.gml</script>
       <script>scripts\scr_menu_save.gml</script>
+      <script>scripts\scr_store_highscore.gml</script>
     </scripts>
     <script>scripts\scr_motion.gml</script>
     <script>scripts\scr_text.gml</script>
@@ -583,8 +649,10 @@
     <script>scripts\scr_fire.gml</script>
     <script>scripts\scr_letters_exists.gml</script>
     <script>scripts\scr_reset.gml</script>
+    <script>scripts\scr_wall_damage.gml</script>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\ftest</font>
     <font>fonts\f_reg</font>
   </fonts>
   <objects name="objects">
@@ -601,35 +669,33 @@
       <object>objects\obj_existing</object>
     </objects>
     <objects name="letters">
-      <object>objects\par_p_letters</object>
-      <object>objects\par_e_letters</object>
-      <objects name="player">
-        <object>objects\obj_p_a</object>
-        <object>objects\obj_p_b</object>
-        <object>objects\obj_p_c</object>
-        <object>objects\obj_p_d</object>
-        <object>objects\obj_p_e</object>
-        <object>objects\obj_p_f</object>
-        <object>objects\obj_p_g</object>
-        <object>objects\obj_p_h</object>
-        <object>objects\obj_p_i</object>
-        <object>objects\obj_p_j</object>
-        <object>objects\obj_p_k</object>
-        <object>objects\obj_p_l</object>
-        <object>objects\obj_p_m</object>
-        <object>objects\obj_p_n</object>
-        <object>objects\obj_p_o</object>
-        <object>objects\obj_p_p</object>
-        <object>objects\obj_p_q</object>
-        <object>objects\obj_p_r</object>
-        <object>objects\obj_p_s</object>
-        <object>objects\obj_p_t</object>
-        <object>objects\obj_p_u</object>
-        <object>objects\obj_p_v</object>
-        <object>objects\obj_p_w</object>
-        <object>objects\obj_p_x</object>
-        <object>objects\obj_p_y</object>
-        <object>objects\obj_p_z</object>
+      <objects name="drop">
+        <object>objects\obj_d_a</object>
+        <object>objects\obj_d_b</object>
+        <object>objects\obj_d_c</object>
+        <object>objects\obj_d_d</object>
+        <object>objects\obj_d_e</object>
+        <object>objects\obj_d_f</object>
+        <object>objects\obj_d_g</object>
+        <object>objects\obj_d_h</object>
+        <object>objects\obj_d_i</object>
+        <object>objects\obj_d_j</object>
+        <object>objects\obj_d_k</object>
+        <object>objects\obj_d_l</object>
+        <object>objects\obj_d_m</object>
+        <object>objects\obj_d_n</object>
+        <object>objects\obj_d_o</object>
+        <object>objects\obj_d_p</object>
+        <object>objects\obj_d_q</object>
+        <object>objects\obj_d_r</object>
+        <object>objects\obj_d_s</object>
+        <object>objects\obj_d_t</object>
+        <object>objects\obj_d_u</object>
+        <object>objects\obj_d_v</object>
+        <object>objects\obj_d_w</object>
+        <object>objects\obj_d_x</object>
+        <object>objects\obj_d_y</object>
+        <object>objects\obj_d_z</object>
       </objects>
       <objects name="enemy">
         <object>objects\obj_e_a</object>
@@ -659,6 +725,45 @@
         <object>objects\obj_e_y</object>
         <object>objects\obj_e_z</object>
       </objects>
+      <objects name="player">
+        <object>objects\obj_p_a</object>
+        <object>objects\obj_p_b</object>
+        <object>objects\obj_p_c</object>
+        <object>objects\obj_p_d</object>
+        <object>objects\obj_p_e</object>
+        <object>objects\obj_p_f</object>
+        <object>objects\obj_p_g</object>
+        <object>objects\obj_p_h</object>
+        <object>objects\obj_p_i</object>
+        <object>objects\obj_p_j</object>
+        <object>objects\obj_p_k</object>
+        <object>objects\obj_p_l</object>
+        <object>objects\obj_p_m</object>
+        <object>objects\obj_p_n</object>
+        <object>objects\obj_p_o</object>
+        <object>objects\obj_p_p</object>
+        <object>objects\obj_p_q</object>
+        <object>objects\obj_p_r</object>
+        <object>objects\obj_p_s</object>
+        <object>objects\obj_p_t</object>
+        <object>objects\obj_p_u</object>
+        <object>objects\obj_p_v</object>
+        <object>objects\obj_p_w</object>
+        <object>objects\obj_p_x</object>
+        <object>objects\obj_p_y</object>
+        <object>objects\obj_p_z</object>
+      </objects>
+      <object>objects\obj_e_brick</object>
+      <object>objects\obj_e_TBrick</object>
+      <object>objects\obj_p_brick</object>
+      <object>objects\obj_p_TBrick</object>
+      <object>objects\par_e_LBricks</object>
+      <object>objects\par_e_letters</object>
+      <object>objects\par_e_TBricks</object>
+      <object>objects\par_p_LBricks</object>
+      <object>objects\obj_splash</object>
+      <object>objects\par_p_letters</object>
+      <object>objects\par_p_TBricks</object>
     </objects>
     <objects name="menu-options">
       <objects name="par-options">
@@ -708,20 +813,27 @@
       <object>objects\obj_options</object>
       <object>objects\obj_quit</object>
     </objects>
-    <object>objects\obj_enemy</object>
-    <object>objects\obj_p_floor</object>
-    <object>objects\obj_e_floor</object>
-    <object>objects\obj_gamemode</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_textbox</object>
-    <object>objects\par_menus</object>
-    <object>objects\par_players</object>
-    <object>objects\obj_water</object>
-    <object>objects\obj_dA</object>
-    <object>objects\obj_dB</object>
-    <object>objects\obj_camera</object>
-    <object>objects\obj_ref</object>
     <object>objects\o_exit</object>
+    <object>objects\obj_adjuster</object>
+    <object>objects\obj_spawn_letters</object>
+    <object>objects\obj_gamemode</object>
+    <object>objects\obj_lose</object>
+    <object>objects\obj_ref</object>
+    <object>objects\obj_textbox</object>
+    <object>objects\obj_water</object>
+    <object>objects\par_menus</object>
+    <objects name="players">
+      <object>objects\obj_e_wheel</object>
+      <object>objects\obj_p_wheel</object>
+      <object>objects\obj_player</object>
+      <object>objects\obj_enemy</object>
+      <object>objects\par_players</object>
+    </objects>
+    <objects name="towers">
+      <object>objects\obj_e_floor</object>
+      <object>objects\obj_p_floor</object>
+    </objects>
+    <object>objects\obj_win</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

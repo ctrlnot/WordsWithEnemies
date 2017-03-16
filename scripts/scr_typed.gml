@@ -29,4 +29,3 @@ if(keyboard_check_pressed(ord("Z"))) text += "z";
 
 // backspace
 if(keyboard_check_pressed(vk_backspace)) text = string_delete(text, string_length(text), 1);
-
