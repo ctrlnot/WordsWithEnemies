@@ -28,7 +28,7 @@ Ctrl + X - to quit
 - [Art by her](https://www.facebook.com/marievyyy)
 - [Game Reference](https://www.reddit.com/r/dailyprogrammer/comments/2syz7y/20150119_challenge_198_easy_words_with_enemies/)
 
-### Authors Note:
+### Dev's Note:
 Upon encountering error on running the executable file, close the game then run it again. Sorry for the inconvenience! I don't know why is that happening :(
 
 Thanks in advance and enjoy! 
