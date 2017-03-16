@@ -9,8 +9,11 @@ Input a valid english dictionary word from the keyboard to counter the enemy's w
 
 ### Controls:
 Arrow keys - to select choices
-Enter - to confirm choice
+
+Enter - to confirm choice and to confirm options
+
 Ctrl + R - to restart the game
+
 Ctrl + X - to quit 
 
 ### Screenshots
